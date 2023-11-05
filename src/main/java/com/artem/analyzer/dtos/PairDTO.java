@@ -4,17 +4,15 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NonNull;
 
-import java.util.List;
-
 @Data
 @AllArgsConstructor
 public class PairDTO implements Comparable<PairDTO> {
-    private Character ch;
-    private Long numberOfOccurrences;
+    private Character symbol;
+    private Long count;
 
 
     @Override
     public int compareTo(@NonNull PairDTO o) {
-        return -Long.compare(this.numberOfOccurrences, o.numberOfOccurrences);
+        return -Long.compare(this.count, o.count);
     }
 }

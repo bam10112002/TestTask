@@ -1,6 +1,5 @@
 package com.artem.analyzer.controllers;
 
-import com.artem.analyzer.dtos.FrequencyRequest;
 import com.artem.analyzer.dtos.PairDTO;
 import com.artem.analyzer.services.FrequencyService;
 import lombok.NonNull;
@@ -22,6 +21,11 @@ public class FrequencyController {
         this.frequencyService = frequencyService;
     }
 
+    /**
+     * Метод подсчитывания частоты встречи символов в строке
+     * @param data строка для анализа
+     * @return список объектов (символ, количество встреч), отсортированный по убыванию
+     */
     @GetMapping("/get/frequency")
     public List<PairDTO> getFrequency(@NonNull @RequestParam String data) {
         return frequencyService.getFrequency(data);
