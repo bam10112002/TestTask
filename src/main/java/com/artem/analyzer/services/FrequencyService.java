@@ -11,6 +11,11 @@ import java.util.stream.Collectors;
 @Service
 public class FrequencyService {
 
+    /**
+     * Метод подсчета частоты встречи символов в строке
+     * @param str строка для анализа
+     * @return список объектов (символ, количество встреч), отсортированный по убыванию
+     */
     public List<PairDTO> getFrequency(@NonNull String str) {
         return str.chars()
                 .mapToObj(c -> (char) c)
